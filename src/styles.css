@@ -1,0 +1,83 @@
+@keyframes thumbsUpBounce {
+    0% {
+      transform: scale(1) rotate(0deg);
+    }
+    30% {
+      transform: scale(1.2) rotate(-30deg);
+    }
+    50% {
+      transform: scale(1.1) rotate(10deg);
+    }
+    70% {
+      transform: scale(1.2) rotate(0deg);
+    }
+    100% {
+      transform: scale(1) rotate(0deg);
+    }
+  }
+  
+  .animate-thumbsUpBounce {
+    animation: thumbsUpBounce 3s ease-in-out infinite;
+  }
+
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: scaleY(1);
+    }
+    50% {
+      transform: scaleY(2);
+    }
+  }
+  
+  .bar {
+    transform-origin: bottom;
+    animation: bounce 2s ease-in-out infinite;
+  }
+  
+  .animate-bounce1 {
+    animation-delay: 0s;
+  }
+  
+  .animate-bounce2 {
+    animation-delay: 0.4s;
+  }
+  
+  .animate-bounce3 {
+    animation-delay: 0.8s;
+  }
+
+
+  @keyframes moveToCenter {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(50px, 50px); /* Adjust based on your layout */
+    }
+  }
+
+  .box1 {
+    top: 0;
+    left: 0;
+    animation-delay: 0s;
+  }
+  .box2 {
+    top: 0;
+    right: 0;
+    animation-delay: 0.2s; /* Stagger the animations */
+  }
+  .box3 {
+    bottom: 0;
+    left: 0;
+    animation-delay: 0.4s; /* Stagger the animations */
+  }
+  .box4 {
+    bottom: 0;
+    right: 0;
+    animation-delay: 0.6s; /* Stagger the animations */
+  }
+
+  .animate-moveToCenter {
+    animation: moveToCenter 1s forwards; /* Adjust duration as needed */
+  }
