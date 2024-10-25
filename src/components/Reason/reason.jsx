@@ -1,9 +1,33 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import "../../styles.css";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
 
-const reason = () => {
+const Reason = () => {
+
+  const [activeBox, setActiveBox] = useState(null);
+  const [disperse, setDisperse] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (activeBox === 3) {
+        setTimeout(() => {
+          setDisperse(true); // Trigger all boxes to disperse together after arriving at the center
+        }, 1000);
+      } else if (activeBox === null || activeBox < 3) {
+        setActiveBox((prev) => (prev === null ? 0 : prev + 1)); // Move each box one by one to the center
+      } else if (disperse) {
+        setTimeout(() => {
+          setDisperse(false); // Reset after dispersion
+          setActiveBox(null); // Start the process again
+        }, 1500);
+      }
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [activeBox, disperse]);
+
   return (
     <div className="h-full p-8 lg:p-24 bg-[#FDF8EE] ">
       <motion.h1
@@ -119,24 +143,33 @@ const reason = () => {
         </div>
 
         <div>
-          <div className="h-[500px] rounded-3xl w-full bg-[#FE9B97] sticky text-white">
-            <div className="box absolute bg-[#8F2020] box1 mb-4 p-6 rounded-xl text-center">
-              <p className="text-sm font-light">Gross Margin</p>
-              <h1 className="text-4xl font-medium">20%</h1>
-            </div>
-            <div className="box absolute bg-[#FF5C5C] box2 mb-4 p-6 rounded-xl text-center">
-              <p className="text-sm font-light">Volume</p>
-              <h1 className="text-4xl font-medium">2.3 M</h1>
-            </div>
-            <div className="box absolute bg-[#ED4D4D] box3 mt-4 p-6 rounded-xl text-center">
-              <p className="text-sm font-light">EBIT</p>
-              <h1 className="text-4xl font-medium">30%</h1>
-            </div>
-            <div className="box absolute bg-[#B92323] box4 mt-4 p-6 rounded-xl text-center">
-              <p className="text-sm font-light">Revenue</p>
-              <h1 className="text-4xl font-medium">₦29B</h1>
-            </div>
-          </div>
+       <div className="h-[500px] rounded-3xl w-full bg-[#FE9B97] relative text-white">
+
+  <div className="absolute top-0 left-0 bg-[#8F2020] animate-moveFromTopLeft mb-4 p-6 rounded-xl text-center">
+  <p className="text-sm font-light">Gross Margin</p>
+  <h1 className="text-4xl font-medium">20%</h1>
+  </div>
+
+ 
+  <div className="absolute top-0 right-0 animate-moveFromTopRight bg-[#FF5C5C] box2 mb-4 p-6 rounded-xl text-center">
+  <p className="text-sm font-light">Volume</p>
+  <h1 className="text-4xl font-medium">2.3 M</h1>
+  </div>
+
+  <div className="absolute bottom-0 left-0 animate-moveFromBottomLeft bg-[#ED4D4D] mt-4 p-6 rounded-xl text-center">
+  <p className="text-sm font-light">EBIT</p>
+  <h1 className="text-4xl font-medium">30%</h1>
+  </div>
+
+  {/* Yellow Box (Bottom-right) */}
+  <div className="absolute bottom-0 right-0 animate-moveFromBottomRight bg-[#B92323] box4 mt-4 p-6 rounded-xl text-center">
+  <p className="text-sm font-light">Revenue</p>
+  <h1 className="text-4xl font-medium">₦29B</h1>
+  </div>
+</div>
+
+
+
           <h3 className="text-xl font-medium lg:font-semibold mt-4">Clear goal alignment</h3>
           <p className="font-light lg:font-normal">
             Improve your team’s efficiency by ensuring everyone focuses on tasks
@@ -148,4 +181,4 @@ const reason = () => {
   );
 };
 
-export default reason;
+export default Reason;

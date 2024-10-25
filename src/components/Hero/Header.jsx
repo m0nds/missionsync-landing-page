@@ -25,8 +25,8 @@ const Header = () => {
 
   return (
     <nav
-      className={`w-screen flex fixed z-20 px-8 lg:px-32 py-8 justify-between items-center transition-all duration-300 ${
-        isScrolled ? "backdrop-blur-lg bg-white/70 shadow-lg" : "bg-transparent"
+      className={`w-screen flex fixed z-20 px-8 lg:px-32 py-4 justify-between items-center transition-all duration-300 ${
+        isScrolled ? "backdrop-blur-xl bg-white/40 " : "bg-transparent"
       }`}
     >
       <div>

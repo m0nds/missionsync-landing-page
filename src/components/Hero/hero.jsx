@@ -6,8 +6,8 @@ const hero = () => {
   return (
     <div 
     id="top"
-     className="h-full flex flex-col py-16 lg:py-20 lg:flex-row bg-slate-300 bg-[linear-gradient(175.19deg,_#EFECFF_8.58%,_#FFF9EB_104.19%)]">
-      <div className="flex flex-col items-center  justify-center lg:items-start lg:justify-start w-full lg:w-[45%] p-8 lg:pl-32">
+     className="h-screen flex flex-col py-16 lg:py-20 lg:flex-row bg-slate-300 bg-[linear-gradient(175.19deg,_#EFECFF_8.58%,_#FFF9EB_104.19%)]">
+      <div className="flex flex-col items-center justify-center lg:items-start lg:justify-start w-full lg:w-[45%] p-8 lg:pl-32">
         <motion.div
           variants={fadeIn("down", 0.3)}
           initial="hidden"
@@ -36,7 +36,7 @@ const hero = () => {
         initial="hidden"
         whileInView={"show"}
         viewport={{ once: false, amount: 0.6 }}
-        className=" lg:w-[55%] lg:mt-0 lg:max-w-full overflow-hidden"
+        className=" lg:w-[55%] lg:mt-12 lg:max-w-full overflow-hidden"
       >
         <svg
           // width="995"

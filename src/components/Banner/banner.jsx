@@ -17,7 +17,7 @@ const banner = () => {
         <img
           src="/images/shape2.png"
           alt=""
-          className="w-16 absolute left-[275px] top-[15px]"
+          className="w-16 absolute left-[360px] top-[32px]"
         />
         </div>
         <h1 className="text-4xl lg:text-5xl leading-relaxed font-medium text-[#070B71]">

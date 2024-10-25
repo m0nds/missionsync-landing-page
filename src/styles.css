@@ -48,36 +48,84 @@
   }
 
 
-  @keyframes moveToCenter {
-    0% {
-      transform: translate(0, 0);
-    }
-    100% {
-      transform: translate(50px, 50px); /* Adjust based on your layout */
-    }
-  }
-
+/* 
   .box1 {
     top: 0;
     left: 0;
-    animation-delay: 0s;
+ 
   }
   .box2 {
     top: 0;
     right: 0;
-    animation-delay: 0.2s; /* Stagger the animations */
+    ;
   }
   .box3 {
     bottom: 0;
     left: 0;
-    animation-delay: 0.4s; /* Stagger the animations */
-  }
+     }
   .box4 {
     bottom: 0;
     right: 0;
-    animation-delay: 0.6s; /* Stagger the animations */
-  }
+ } */
 
-  .animate-moveToCenter {
-    animation: moveToCenter 1s forwards; /* Adjust duration as needed */
+ 
+
+
+ /* Move the boxes to the center */
+@keyframes moveFromTopLeft {
+    from {
+      transform: translate(0, 0); /* Top-left */
+    }
+    to {
+      transform: translate(150px, 150px); /* Centered */
+    }
   }
+  
+  @keyframes moveFromTopRight {
+    from {
+      transform: translate(0, 0); 
+    }
+    to {
+      transform: translate(-150px, 150px); 
+    }
+  }
+  
+  @keyframes moveFromBottomLeft {
+    from {
+      transform: translate(0, 0); 
+    }
+    to {
+      transform: translate(150px, -150px); 
+    }
+  }
+  
+  @keyframes moveFromBottomRight {
+    from {
+      transform: translate(0, 0); 
+    }
+    to {
+      transform: translate(-150px, -150px);
+    }
+  }
+  
+  /* Tailwind CSS */
+  .animate-moveFromTopLeft {
+    animation: moveFromTopLeft 2s ease-in infinite;
+    animation-delay: 0s; /* First box starts immediately */
+  }
+  
+  .animate-moveFromTopRight {
+    animation: moveFromTopRight 2s ease-in infinite ;
+    animation-delay: 2s; /* Second box starts after 2 seconds */
+  }
+  
+  .animate-moveFromBottomLeft {
+    animation: moveFromBottomLeft 2s ease-in infinite;
+    animation-delay: 4s; /* Third box starts after 4 seconds */
+  }
+  
+  .animate-moveFromBottomRight {
+    animation: moveFromBottomRight 2s ease-in infinite;
+    animation-delay: 6s; /* Fourth box starts after 6 seconds */
+  }
+  

@@ -40,6 +40,7 @@ const customStyles = {
     ...provided,
     padding: "0.2rem",
     borderColor: "gray-300",
+    backgroundColor: "#fafafa",
     boxShadow: "none",
   }),
   option: (provided, state) => ({
@@ -57,10 +58,10 @@ const contact = () => {
   return (
     <div className="p-8 lg:p-24 bg-[#F5F5F5]">
       <motion.div
-        variants={fadeIn("down", 0.2)}
-        initial="hidden"
-        whileInView={"show"}
-        viewport={{ once: false, amount: 0.6 }}
+        // variants={fadeIn("down", 0.2)}
+        // initial="hidden"
+        // whileInView={"show"}
+        // viewport={{ once: false, amount: 0.6 }}
         className="bg-[#070B71] w-full h-full rounded-3xl pl-4 lg:p-16 flex flex-col lg:flex-row gap-6"
       >
         <div className="text-white space-y-6 w-full lg:w-2/5">
