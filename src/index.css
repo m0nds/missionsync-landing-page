@@ -7,8 +7,23 @@ body {
 }
 
 
+/* Style for the dot container */
+.slick-dots {
+  bottom: -30px; /* Adjust the position of the dots if needed */
+}
 
+/* More specific style for inactive dots */
+.slick-dots li button:before {
+  font-size: 12px !important; /* Increase dot size and use !important to ensure it's applied */
+  color: gray !important; /* Color for inactive dots */
+  opacity: 0.5 !important; /* Adjust opacity for inactive dots */
+}
 
+/* More specific style for the active dot */
+.slick-dots li.slick-active button:before {
+  color: #9747FF !important; /* Color for the active dot */
+  opacity: 1 !important; /* Make active dot fully opaque */
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

@@ -43,7 +43,7 @@ export const cardData = [
     },
     {
       id: 2,
-      text: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      text: "Rolling easier work, faster pay, exclusive benefits and everyday savings into the world’s first employment superapp",
       author: "Jane Doe",
       position: "CEO at Tech Company",
       profile: "https://randomuser.me/api/portraits/women/32.jpg",
@@ -52,7 +52,7 @@ export const cardData = [
     },
     {
       id: 3,
-      text: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      text: "Rolling easier work, faster pay, exclusive benefits and everyday savings into the world’s first employment superapp",
       author: "John Smith",
       position: "Founder at Startup Inc.",
       profile: "https://randomuser.me/api/portraits/men/33.jpg",
